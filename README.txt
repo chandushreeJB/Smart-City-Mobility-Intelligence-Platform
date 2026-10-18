@@ -1,242 +1,109 @@
-# 🚍 Smart Mobility Analytics Platform
-### Comparative Analysis of Delhi & Bengaluru Public Transportation using Power BI
+# Bengaluru Smart Mobility Intelligence Platform
 
+### An end-to-end Power BI project analysing Bengaluru's buses, metro, traffic and weather
 
----
+> A team project built during the **Infosys Springboard Virtual Internship 7.0**.
+> This is my fork of the team repository: [Sameer-2904/Smart-City-Mobility-Intelligence-Platform](https://github.com/Sameer-2904/Smart-City-Mobility-Intelligence-Platform).
 
-# 📌 Project Overview
+![Bengaluru Smart Mobility Intelligence Dashboard](01-bengaluru-smart-mobility-intelligence.png)
 
-Smart Mobility Analytics Platform is an end-to-end Business Intelligence project developed using **Power BI** to analyze and compare urban transportation systems in **Delhi** and **Bengaluru**.
+## Overview
 
-The project integrates multiple transportation and smart city datasets including GTFS transit feeds, metro ridership, weather, traffic, bike sharing, and demographic information to provide actionable insights for city planners and decision makers.
+This project combines Bengaluru's **bus GTFS, metro GTFS, metro ridership, traffic, weather and demographic data** into one set of interactive Power BI dashboards. City planners and transport teams can use it to see how the city moves, where it gets congested, and how weather and ticket types affect travel. A Delhi vs Bengaluru dashboard is included as a bonus comparison.
 
----
+## Key numbers (Bengaluru)
 
-# 🎯 Objectives
+| Metric | Value |
+|---|---|
+| Total metro ridership | **340M** |
+| Average daily metro ridership | **788K** |
+| Bus routes / bus stops / trips | **4K** / **8K** / **33K** |
+| Average traffic speed | **39.4 km/h** |
+| Average congestion / incident reports | **80.8%** / **14K** |
+| Average temperature / humidity / rainfall | **23.9 °C** / **65.2%** / **2.3 mm** |
+| **Mobility Health Score** | **84.6 (status: Good)** |
 
-- Analyze public transportation performance
-- Monitor metro and bus network efficiency
-- Study traffic congestion patterns
-- Understand weather impact on mobility
-- Compare Delhi and Bengaluru transportation systems
-- Create executive dashboards for decision-making
+## Dashboards
 
----
+### 1. Traffic Analytics
+KPIs for traffic volume, speed, congestion and incident reports. Filters by area and weather condition. Includes traffic volume and speed trends, congestion by area, and road capacity utilisation.
 
-# 🛠️ Tech Stack
+![Traffic Analytics](03-bengaluru-traffic-analytics.png)
 
-- Microsoft Power BI
-- DAX
-- Power Query
-- GTFS Transit Data
-- Microsoft Excel
-- Open-Meteo Weather API
-- CSV Datasets
+### 2. Transit Analytics
+Weather KPIs, temperature trend, weather conditions, the 15 busiest bus stops, bus route names, weather impact on metro ridership, and ticket payment mode distribution.
 
----
+![Transit Analytics](02-bengaluru-transit-analytics.png)
 
-# 📂 Datasets Used
+### 3. Metro Analytics
+Digital vs physical tickets, daily ridership trend (QR, smart card, NCMC), smart card vs token usage, and pass types (one-day, three-day, five-day, group).
 
-## Delhi
+![Metro Analytics](04-bengaluru-metro-analytics.png)
 
-- Delhi Bus GTFS
-- Delhi Metro GTFS
-- Weather Dataset
-- Traffic Dataset
-- Bike Sharing Dataset
-- Demographic Dataset
+### 4. Smart Mobility (maps)
+Interactive maps of Bengaluru's bus stops and metro stations, busiest stops, metro line split (Purple, Green, Yellow), and filters for bus stop and metro line.
 
-## Bengaluru
+![Smart Mobility maps](05-bengaluru-smart-mobility-maps.png)
 
-- Bengaluru Bus GTFS
-- Bengaluru Metro GTFS
-- Metro Ridership Dataset
-- Weather Dataset
-- Traffic Dataset
-- Demographic Dataset
+### 5. Executive Intelligence
+A one-page summary for decision makers: **Mobility Health Score**, congestion score, ridership, speed, weather KPIs and key insights.
 
----
+![Executive Intelligence](06-bengaluru-executive-intelligence.png)
 
-# 📊 Dashboards
+### 6. Delhi vs Bengaluru
+Side-by-side comparison of Mobility Health Score, traffic score, population, average speed, rainfall, metro lines and busiest stops.
 
-## 🚍 Delhi Transit Analytics
+![Delhi vs Bengaluru](07-delhi-vs-bengaluru-comparison.png)
 
-- Bus Route Analysis
-- Stop Distribution
-- Active Services
-- Route Performance
-- Transit KPIs
+## Key insights
 
----
+- **Metro:** 340M total rides, about 788K per day. About **77% of tickets are physical** and **23% digital**.
+- **Traffic hotspots:** Koramangala, Indiranagar and M.G. Road have the highest traffic volume and congestion.
+- **Seasonal pattern:** Traffic volume and average speed both fall sharply after July.
+- **Metro network:** The Purple Line has the most stations (43.5%), followed by Green (37.7%) and Yellow (18.8%).
+- **City comparison:** Bengaluru scores **84.6** on Mobility Health vs **77.3** for Delhi, with a higher average speed (39.4 vs 28.1 km/h) in this dataset.
 
-## 🚇 Delhi Metro Analytics
+## Data pipeline
 
-- Metro Line Analysis
-- Station Analysis
-- Route Distribution
-- Metro Operations
-- Service Insights
+```
+Raw datasets -> Power Query (cleaning) -> Schema standardisation -> Data modelling
+-> Relationships -> DAX measures -> Power BI dashboards -> Executive insights
+```
 
----
+## Datasets
 
-## 🚦 Delhi Smart Mobility Dashboard
+Bengaluru bus GTFS, Bengaluru metro GTFS, metro ridership, weather (Open-Meteo API), traffic, and demographics. Delhi data is used for the comparison dashboard. Files are in the `Bengaluru Data` and `Delhi Data` folders.
 
-- Traffic Analysis
-- Weather Trends
-- Public Transport Usage
-- Mobility KPIs
-- Travel Behaviour
+## Tech stack
 
----
+| Area | Tools |
+|---|---|
+| BI and visuals | Microsoft Power BI |
+| Calculations | DAX (including the Mobility Health Score) |
+| Data cleaning | Power Query, Microsoft Excel |
+| Data sources | GTFS transit data, Open-Meteo Weather API, CSV datasets |
 
-## 📈 Delhi Executive Intelligence Dashboard
+## My contribution
 
-- Mobility Health Score
-- Executive KPIs
-- Weather Impact
-- Transport Performance
-- Decision Support Metrics
+> Edit this to match what you really did.
 
----
+- Project Manager for a team of [N]: planned milestones, tracked progress and kept the documentation up to date.
+- [Example: Cleaned and standardised the Bengaluru datasets in Power Query]
+- [Example: Built the Bengaluru Executive Intelligence dashboard and the Mobility Health Score]
 
-## 🚇 Bengaluru Metro Analytics
+## How to open the dashboards
 
-- Daily Metro Ridership
-- QR Usage Trends
-- Smart Card vs Token Usage
-- Digital vs Physical Tickets
-- Metro Performance
+1. Download the `.pbix` file(s) from this repo.
+2. Open them in the free **Power BI Desktop**.
+3. If Power BI asks for data locations, point it to the `Bengaluru Data` and `Delhi Data` folders.
 
----
+## Future enhancements
 
-## 🚦 Bengaluru Smart Mobility Dashboard
+Real-time GTFS integration, live traffic APIs, IoT sensor data, predictive analytics, AI-based congestion forecasting, route optimisation and a mobile dashboard.
 
-- Traffic Performance
-- Weather Analysis
-- Public Transport Usage
-- Speed Analysis
-- Mobility Indicators
+## Team
 
----
+Built by a team during the Infosys Springboard Virtual Internship 7.0. Original repository: [Sameer-2904/Smart-City-Mobility-Intelligence-Platform](https://github.com/Sameer-2904/Smart-City-Mobility-Intelligence-Platform).
 
-## 📊 Bengaluru Executive Intelligence Dashboard
+**Chandushree J B**, B.E. Artificial Intelligence & Machine Learning, Navkis College of Engineering, Hassan | [LinkedIn](https://www.linkedin.com/in/chandu-jb)
 
-- Mobility Health Score
-- Population Insights
-- Weather Impact
-- Ridership Analysis
-- Executive KPIs
-
----
-
-## ⚔️ Delhi vs Bengaluru Dashboard
-
-Comparison of
-
-- Population
-- Public Transport Usage
-- Metro Ridership
-- Average Speed
-- Weather
-- Rainfall
-- Mobility Health Score
-- Routes
-- Stops
-- Traffic Performance
-
----
-
-# ⭐ Key Features
-
-- GTFS Transit Analytics
-- Metro Analytics
-- Traffic Analytics
-- Weather Analytics
-- Bike Sharing Analytics
-- Executive Intelligence
-- KPI Monitoring
-- Mobility Health Score
-- Multi-City Comparison
-- Interactive Filters
-- Drill-down Analysis
-- Cross Dashboard Navigation
-
----
-
-# 🏗️ Data Pipeline
-
-Raw Datasets
-
-⬇
-
-Power Query (Cleaning)
-
-⬇
-
-Schema Standardization
-
-⬇
-
-Data Modeling
-
-⬇
-
-Relationships
-
-⬇
-
-DAX Measures
-
-⬇
-
-Power BI Dashboards
-
-⬇
-
-Executive Insights
-
----
-
-# 📌 KPIs
-
-- Total Routes
-- Total Stops
-- Active Services
-- Average Speed
-- Average Temperature
-- Average Humidity
-- Average Rainfall
-- Metro Ridership
-- Public Transport Usage
-- Digital Ticket Usage
-- Physical Ticket Usage
-- Mobility Health Score
-
----
-
-# 📈 Business Impact
-
-The platform helps city planners and transportation authorities to:
-
-- Monitor transport performance
-- Improve public transport planning
-- Analyze congestion
-- Measure weather impacts
-- Compare city performance
-- Support data-driven decisions
-
----
-
-# 🚀 Future Enhancements
-
-- Real-time GTFS Integration
-- Live Traffic APIs
-- IoT Sensor Data
-- Predictive Analytics
-- AI-based Congestion Forecasting
-- Route Optimization
-- Mobile Dashboard
-
----
-
-# ⭐ If you found this project useful, don't forget to Star the repository!
